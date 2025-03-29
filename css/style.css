@@ -1,0 +1,470 @@
+/* Base Styles */
+body {
+    background-image: url('../images/paper-bg.png');
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #8B4513;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #8B4513, #DEB887);
+    border-radius: 2px;
+}
+
+/* Vintage Card Styles */
+.vintage-card {
+    background: linear-gradient(135deg, #F5F5DC 0%, #FFFFFF 100%);
+    border: 1px solid #DEB887;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(139, 69, 19, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vintage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
+}
+
+/* Button Styles */
+.vintage-button {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    color: #F5F5DC;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.vintage-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+}
+
+/* Exhibition Card Styles */
+.exhibition-card {
+    background: #FFFFFF;
+    border: 1px solid #DEB887;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.exhibition-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Collection Image Styles */
+.collection-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Payment Method Button Styles */
+.payment-method-button {
+    border: 1px solid #DEB887;
+    border-radius: 4px;
+    padding: 1rem;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.payment-method-button:hover {
+    border-color: #8B4513;
+    background: #F5F5DC;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    color: #F5F5DC;
+    padding: 3rem 0;
+}
+
+.footer-section h3 {
+    color: #F5F5DC;
+    margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+.animate-slide-up-delayed {
+    animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.animate-slide-up-more-delayed {
+    animation: slideUp 0.8s ease-out 0.4s both;
+}
+
+/* Custom styles to complement Tailwind */
+@layer base {
+    body {
+        background-image: url('../images/paper-texture.png');
+        background-attachment: fixed;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+}
+
+/* Vintage card styles */
+.vintage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #DEB887, white, #DEB887);
+}
+
+.vintage-card::after {
+    content: '✧';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #8B4513;
+    opacity: 0.2;
+}
+
+/* Chatbot styles */
+#chatWindow {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    width: 20rem;
+    height: 25rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+#chatWindow.hidden {
+    display: none !important;
+}
+
+#chatWindow:not(.hidden) {
+    display: flex !important;
+    flex-direction: column;
+}
+
+#chatMessages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#chatInput {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #DEB887;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+}
+
+#sendButton {
+    padding: 0.5rem 0.75rem;
+    background-color: #8B4513;
+    color: #F5F5DC;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+#sendButton:hover {
+    background-color: #A0522D;
+}
+
+/* Chatbot animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F5F5DC;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8B4513;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #A0522D;
+}
+
+/* Form input styles */
+input, select {
+    border-color: #DEB887;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #8B4513;
+    outline: none;
+    box-shadow: 0 0 0 1px #8B4513;
+    background-color: #FFFFFF;
+}
+
+input::placeholder {
+    color: #A0A0A0;
+}
+
+/* Decorative elements */
+.decorative-border {
+    border: 2px solid #DEB887;
+    position: relative;
+}
+
+.decorative-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid #8B4513;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Order summary styles */
+.order-summary {
+    background-color: #F5F5DC;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #DEB887;
+}
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #DEB887;
+}
+
+.order-summary-item:last-child {
+    border-bottom: none;
+}
+
+/* Card input styles */
+.card-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #DEB887;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.card-input:focus {
+    border-color: #8B4513;
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.1);
+}
+
+/* Section headers */
+.section-header::before {
+    display: none;
+}
+
+/* Image hover effects */
+.collection-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-header::before,
+    .section-header::after {
+        display: none;
+    }
+    
+    .vintage-button::before,
+    .vintage-button::after {
+        display: none;
+    }
+    
+    .section-header {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .exhibition-card {
+        padding: 1rem;
+    }
+    
+    .order-summary {
+        padding: 0.75rem;
+    }
+}
+
+/* Chatbot Enhancement */
+#chatbotToggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+    cursor: pointer;
+    background-color: #8B4513;
+    color: #F5F5DC;
+    padding: 0.75rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #DEB887;
+    transition: all 0.3s ease;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chatbotToggle:hover {
+    transform: scale(1.05);
+    background-color: #A0522D;
+}
+
+#chatbotToggle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Footer Enhancement */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #DEB887, white, #DEB887);
+}
+
+/* Ensure chatbot stays above other elements */
+.vintage-card, .exhibition-card, .order-summary {
+    position: relative;
+    z-index: 1;
+}
+
+/* Cultural Elements */
+.cultural-border {
+    border: 2px solid #DEB887;
+    position: relative;
+}
+
+.cultural-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid #8B4513;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Hero Section Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+.animate-slide-up-delayed {
+    animation: slideUp 0.8s ease-out 0.2s both;
+}
+
+.animate-slide-up-more-delayed {
+    animation: slideUp 0.8s ease-out 0.4s both;
+} 

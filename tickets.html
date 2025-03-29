@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets - Heritage Museum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#F5F5DC] font-['Inter']">
+    <!-- Navbar -->
+    <nav class="bg-[#8B4513] text-[#F5F5DC] py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-2xl font-['SF_Pro_Display'] tracking-tight">Heritage Museum</div>
+            <div class="space-x-8">
+                <a href="index.html" class="hover:text-[#DEB887] transition-colors duration-300 hover:ring-2 hover:ring-[#DEB887] hover:ring-opacity-50 px-3 py-1 rounded-full">Home</a>
+                <a href="about.html" class="hover:text-[#DEB887] transition-colors duration-300 hover:ring-2 hover:ring-[#DEB887] hover:ring-opacity-50 px-3 py-1 rounded-full">About</a>
+                <a href="exhibitions.html" class="hover:text-[#DEB887] transition-colors duration-300 hover:ring-2 hover:ring-[#DEB887] hover:ring-opacity-50 px-3 py-1 rounded-full">Exhibitions</a>
+                <a href="contact.html" class="hover:text-[#DEB887] transition-colors duration-300 hover:ring-2 hover:ring-[#DEB887] hover:ring-opacity-50 px-3 py-1 rounded-full">Contact</a>
+                <a href="login.html" class="hover:text-[#DEB887] transition-colors duration-300 hover:ring-2 hover:ring-[#DEB887] hover:ring-opacity-50 px-3 py-1 rounded-full">Login</a>
+                <a href="signup.html" class="hover:text-[#DEB887] transition-colors duration-300 hover:ring-2 hover:ring-[#DEB887] hover:ring-opacity-50 px-3 py-1 rounded-full">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ticket Booking Section -->
+    <section class="py-16 bg-[#F5F5DC]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-['SF_Pro_Display'] tracking-tight text-center mb-12">Book Your Tickets</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <form id="bookingForm" class="space-y-6">
+                    <div>
+                        <label class="block mb-2">Entry Type</label>
+                        <select class="w-full p-2 border rounded">
+                            <option value="museum">Museum Entry</option>
+                            <option value="show">Special Exhibition</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Date</label>
+                        <input type="date" class="w-full p-2 border rounded">
+                    </div>
+                    <div>
+                        <label class="block mb-2">Time</label>
+                        <select class="w-full p-2 border rounded">
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Number of Visitors</label>
+                        <input type="number" min="1" max="10" class="w-full p-2 border rounded">
+                    </div>
+                    <button type="submit" class="w-full vintage-button">
+                        Proceed to Payment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="py-16 bg-[#DEB887]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-['SF_Pro_Display'] tracking-tight text-center mb-12">Payment Details</h2>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-['SF_Pro_Display'] tracking-tight mb-4">Order Summary</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Adult Tickets (2)</span>
+                            <span>$30.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Child Tickets (1)</span>
+                            <span>$8.00</span>
+                        </div>
+                        <div class="border-t pt-2 mt-2">
+                            <div class="flex justify-between font-semibold">
+                                <span>Total</span>
+                                <span>$38.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="paymentForm" class="space-y-6">
+                    <div>
+                        <label class="block mb-2">Payment Method</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" class="payment-method-button">
+                                <img src="images/credit-card.png" alt="Credit Card" class="h-8 mx-auto">
+                            </button>
+                            <button type="button" class="payment-method-button">
+                                <img src="images/paypal.png" alt="PayPal" class="h-8 mx-auto">
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Card Number</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" class="w-full p-2 border rounded">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block mb-2">Expiry Date</label>
+                            <input type="text" placeholder="MM/YY" class="w-full p-2 border rounded">
+                        </div>
+                        <div>
+                            <label class="block mb-2">CVV</label>
+                            <input type="text" placeholder="123" class="w-full p-2 border rounded">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full vintage-button">
+                        Complete Payment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Elements -->
+    <div class="fixed top-0 left-0 w-full h-2 bg-gradient-to-r from-[#FF9933] via-white to-[#138808]"></div>
+    <div class="fixed bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#FF9933] via-white to-[#138808]"></div>
+    <div class="fixed left-0 top-0 h-full w-2 bg-gradient-to-b from-[#FF9933] via-white to-[#138808]"></div>
+    <div class="fixed right-0 top-0 h-full w-2 bg-gradient-to-b from-[#FF9933] via-white to-[#138808]"></div>
+
+    <!-- Footer -->
+    <footer class="bg-[#8B4513] text-[#F5F5DC] py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-['SF_Pro_Display'] mb-4">Contact Us</h3>
+                    <p>123 Museum Street</p>
+                    <p>City, Country</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-['SF_Pro_Display'] mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-[#DEB887]">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#DEB887]">About</a></li>
+                        <li><a href="exhibitions.html" class="hover:text-[#DEB887]">Exhibitions</a></li>
+                        <li><a href="contact.html" class="hover:text-[#DEB887]">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-['SF_Pro_Display'] mb-4">Opening Hours</h3>
+                    <p>Monday - Friday: 10:00 AM - 6:00 PM</p>
+                    <p>Saturday - Sunday: 11:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="text-center mt-8 pt-8 border-t border-[#8B4513]/20">
+                <p>&copy; 2025 Museum of Indian Heritage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
